@@ -35,7 +35,7 @@ public class DomainApiServiceImpl extends DomainApiService {
     public Response postDomain(String vmName, Integer memory, String vmImage, Integer storage, SecurityContext securityContext) throws NotFoundException {
         UUID vmUuid = UUID.randomUUID();
         Create creates = new Create();
-        boolean test = creates.createVM(vmName,vmUuid,memory,vmImage, storage);
+        boolean test = creates.createVM(vmName,vmUuid,memory,vmImage);
         if(test == true){
             return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, vmUuid.toString())).build();
         }
