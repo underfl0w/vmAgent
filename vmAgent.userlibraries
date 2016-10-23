@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<eclipse-userlibraries>
-  <library name="org.libvirt:libvirt:0.5.1">
-    <archive path="/home/jurjen/.m2/repository/org/libvirt/libvirt/0.5.1/libvirt-0.5.1.jar" />
-    <archive path="/home/jurjen/.m2/repository/net/java/dev/jna/jna/3.5.0/jna-3.5.0.jar" />
-  </library>
-</eclipse-userlibraries>
-

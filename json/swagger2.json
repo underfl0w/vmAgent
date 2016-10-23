@@ -1,0 +1,540 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "No description",
+    "version" : "1.0.0",
+    "title" : "virtualization api",
+    "contact" : { }
+  },
+  "host" : "api.vmxhosting.nl",
+  "tags" : [ {
+    "name" : "Network",
+    "description" : "#To be  implemented"
+  }, {
+    "name" : "Storage"
+  }, {
+    "name" : "Domain"
+  }, {
+    "name" : "System"
+  } ],
+  "schemes" : [ "https" ],
+  "security" : [ {
+    "auth" : [ ]
+  } ],
+  "paths" : {
+    "/domain" : {
+      "post" : {
+        "tags" : [ "Domain" ],
+        "summary" : "Add domain",
+        "operationId" : "postDomain",
+        "parameters" : [ {
+          "name" : "vmName",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "x-example" : "string"
+        }, {
+          "name" : "memory",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32",
+          "x-example" : 30000
+        }, {
+          "name" : "vmImage",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "x-example" : "/path/to/image.iso"
+        }, {
+          "name" : "storage",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32",
+          "x-example" : 444
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      }
+    },
+    "/domain/{UUID}" : {
+      "get" : {
+        "tags" : [ "Domain" ],
+        "summary" : "Retrieve domain information",
+        "description" : "#To be implemented",
+        "operationId" : "getDomainUUID",
+        "parameters" : [ {
+          "name" : "UUID",
+          "in" : "path",
+          "description" : "ID domain",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Domain" ],
+        "summary" : "Control domain",
+        "operationId" : "postDomainUUID",
+        "parameters" : [ {
+          "name" : "UUID",
+          "in" : "path",
+          "description" : "ID domain",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Domain" ],
+        "summary" : "Update domain configuration",
+        "operationId" : "putDomainUUID",
+        "parameters" : [ {
+          "name" : "UUID",
+          "in" : "path",
+          "description" : "ID domain",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Domain" ],
+        "summary" : "Delete domain",
+        "operationId" : "deleteDomainUUID",
+        "parameters" : [ {
+          "name" : "UUID",
+          "in" : "path",
+          "description" : "ID domain",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      }
+    },
+    "/network" : {
+      "post" : {
+        "tags" : [ "Network" ],
+        "summary" : "Add network",
+        "operationId" : "postNetwork",
+        "parameters" : [ {
+          "name" : "Name",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "domain",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "x-example" : "domain.local"
+        }, {
+          "name" : "mode",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "x-example" : "Route, nat"
+        }, {
+          "name" : "ipaddress",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "x-example" : "10.0.2.1"
+        }, {
+          "name" : "netmask",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "x-example" : "255.255.255.0"
+        }, {
+          "name" : "dhcpstart",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "x-example" : "10.0.2.40"
+        }, {
+          "name" : "dhcpend",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "x-example" : "10.0.2.50"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "type" : "string"
+              }
+            }
+          },
+          "401" : {
+            "description" : "Status 401",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "/network/{UUID}" : {
+      "get" : {
+        "tags" : [ "Network" ],
+        "summary" : "retrieve network information",
+        "description" : "#To be implemented",
+        "operationId" : "getNetworkUUID",
+        "parameters" : [ {
+          "name" : "UUID",
+          "in" : "path",
+          "description" : "ID network",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Network" ],
+        "summary" : "Control network",
+        "operationId" : "postNetworkUUID",
+        "parameters" : [ {
+          "name" : "UUID",
+          "in" : "path",
+          "description" : "ID network",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Network" ],
+        "summary" : "Update network config",
+        "operationId" : "putNetworkUUID",
+        "parameters" : [ {
+          "name" : "UUID",
+          "in" : "path",
+          "description" : "ID network",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Network" ],
+        "summary" : "Remove network",
+        "operationId" : "deleteNetworkUUID",
+        "parameters" : [ {
+          "name" : "UUID",
+          "in" : "path",
+          "description" : "ID network",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      }
+    },
+    "/storage/pool" : {
+      "post" : {
+        "tags" : [ "Storage" ],
+        "summary" : "Add pool",
+        "operationId" : "postStoragePool",
+        "parameters" : [ {
+          "name" : "Name",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "Hostname",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "Device Path",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "Authtype",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "username",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "secret",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "Path",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          },
+          "401" : {
+            "description" : "Status 401"
+          }
+        }
+      }
+    },
+    "/storage/pool/{UUIDP}/volume" : {
+      "post" : {
+        "tags" : [ "Storage" ],
+        "summary" : "Add volume",
+        "operationId" : "postStoragePoolUUIDPVolume",
+        "parameters" : [ {
+          "name" : "UUIDP",
+          "in" : "path",
+          "description" : "ID Storage pool",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "Name",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "Size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/storage/pool/{UUIDP}/volume/{UUIDV}" : {
+      "get" : {
+        "tags" : [ "Storage" ],
+        "summary" : "retrieve storage volume information",
+        "description" : "#To be implemented",
+        "operationId" : "getStoragePoolUUIDPVolumeUUIDV",
+        "parameters" : [ {
+          "name" : "UUIDP",
+          "in" : "path",
+          "description" : "ID Storage pool",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "UUIDV",
+          "in" : "path",
+          "description" : "ID Storage volume",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Storage" ],
+        "summary" : "Delete storage volume",
+        "operationId" : "deleteStoragePoolUUIDPVolumeUUIDV",
+        "parameters" : [ {
+          "name" : "UUIDP",
+          "in" : "path",
+          "description" : "ID Storage pool",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "UUIDV",
+          "in" : "path",
+          "description" : "ID Storage volume",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          },
+          "401" : {
+            "description" : "Status 401"
+          },
+          "404" : {
+            "description" : "Status 404"
+          }
+        }
+      }
+    },
+    "/storage/pool/{UUID}" : {
+      "get" : {
+        "tags" : [ "Storage" ],
+        "summary" : "retrieve storage pool information",
+        "description" : "#To be implemented",
+        "operationId" : "getStoragePoolUUID",
+        "parameters" : [ {
+          "name" : "UUID",
+          "in" : "path",
+          "description" : "ID Storage pool",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          },
+          "401" : {
+            "description" : "Status 401"
+          },
+          "404" : {
+            "description" : "Status 404"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Storage" ],
+        "summary" : "Control storage pool",
+        "operationId" : "postStoragePoolUUID",
+        "parameters" : [ {
+          "name" : "UUID",
+          "in" : "path",
+          "description" : "ID Storage pool",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Storage" ],
+        "summary" : "Delete storage pool",
+        "operationId" : "deleteStoragePoolUUID",
+        "parameters" : [ {
+          "name" : "UUID",
+          "in" : "path",
+          "description" : "ID Storage pool",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          },
+          "401" : {
+            "description" : "Status 401"
+          },
+          "404" : {
+            "description" : "Status 404"
+          }
+        }
+      }
+    },
+    "/system/config" : {
+      "get" : {
+        "tags" : [ "System" ],
+        "summary" : "Retrieve system configuration",
+        "description" : "#To be implemented",
+        "operationId" : "getSystemConfig",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "System" ],
+        "summary" : "Update system configuration",
+        "operationId" : "putSystemConfig",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      }
+    },
+    "/system/specs" : {
+      "get" : {
+        "tags" : [ "System" ],
+        "summary" : "Retrieve system information",
+        "operationId" : "getSystemSpecs",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions" : {
+    "auth" : {
+      "type" : "basic"
+    }
+  }
+}

@@ -1,23 +1,16 @@
-package nl.vmxhosting.create;
+package io.swagger.api.impl.domain;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.UUID;
 
 import org.libvirt.Connect;
 import org.libvirt.Domain;
-import org.libvirt.LibvirtException;
-import org.libvirt.NodeInfo;
+import org.libvirt.StorageVol;
+
+import java.util.UUID;
 
 /**
  * Created by jurjen on 10/22/16.
  */
-@WebServlet(name = "Servlet", value = "/Create")
-public class Servlet extends HttpServlet {
+public class Create {
     private String TEMPLATE = "<domain type='kvm'>" + "<name>$vmName</name>" + "<uuid>$vmUuid</uuid>"
             + "<memory>$vmMemory</memory>" + "<vcpu>1</vcpu>" + "<os>"
             + "<type arch='x86_64' machine='pc-1.0'>hvm</type>" + "<boot dev='hd'/>" + "</os>" + "<clock offset='utc'/>"
@@ -38,7 +31,8 @@ public class Servlet extends HttpServlet {
     public boolean createVM(String vmName,
                             UUID vmUuid,
                             int vmMemory,
-                            String vmImage) {
+                            String vmImage
+                            ) {
         String template;
         Connect conn;
         String memory = String.valueOf(vmMemory);
@@ -46,7 +40,6 @@ public class Servlet extends HttpServlet {
 
             conn = new Connect("qemu:///system");
 
-            vmUuid = UUID.randomUUID();
             template = TEMPLATE;
             template = template.replace("$vmName", vmName);
             template = template.replace("$vmMemory", memory);
@@ -56,24 +49,11 @@ public class Servlet extends HttpServlet {
             Domain domain = conn.domainCreateXML(template, 0);
             conn.close();
         } catch (Exception e) {
+            System.out.print(e);
             e.printStackTrace();
             return false;
         }
 
         return true;
-    }
-
-
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.getWriter().append("Hello!");
-        UUID vmUuid = UUID.randomUUID();
-        int memory = 200;
-        createVM("Test", vmUuid, memory, "/home/jurjen/Downloads/dsl-4.4.10.iso");
-        response.getWriter().append("Thank you!!");
-
     }
 }
