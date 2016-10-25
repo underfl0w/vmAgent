@@ -24,7 +24,7 @@ import javax.ws.rs.*;
 
 
 @io.swagger.annotations.Api(description = "the network API")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-10-22T20:34:14.886Z")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-10-25T14:06:59.556Z")
 public class NetworkApi  {
    private final NetworkApiService delegate = NetworkApiServiceFactory.getNetworkApi();
 
@@ -37,7 +37,7 @@ public class NetworkApi  {
     }, tags={ "Network", })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "Status 200", response = void.class) })
-    public Response deleteNetworkUUID(@ApiParam(value = "ID network",required=true) @PathParam("UUID") Integer UUID
+    public Response deleteNetworkUUID(@ApiParam(value = "ID network",required=true) @PathParam("UUID") String UUID
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.deleteNetworkUUID(UUID,securityContext);
@@ -51,7 +51,7 @@ public class NetworkApi  {
     }, tags={ "Network", })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "Status 200", response = void.class) })
-    public Response getNetworkUUID(@ApiParam(value = "ID network",required=true) @PathParam("UUID") Integer UUID
+    public Response getNetworkUUID(@ApiParam(value = "ID network",required=true) @PathParam("UUID") String UUID
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.getNetworkUUID(UUID,securityContext);
@@ -87,7 +87,7 @@ public class NetworkApi  {
     }, tags={ "Network", })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "Status 200", response = void.class) })
-    public Response postNetworkUUID(@ApiParam(value = "ID network",required=true) @PathParam("UUID") Integer UUID
+    public Response postNetworkUUID(@ApiParam(value = "ID network",required=true) @PathParam("UUID") String UUID
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.postNetworkUUID(UUID,securityContext);
@@ -101,7 +101,7 @@ public class NetworkApi  {
     }, tags={ "Network", })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "Status 200", response = void.class) })
-    public Response putNetworkUUID(@ApiParam(value = "ID network",required=true) @PathParam("UUID") Integer UUID
+    public Response putNetworkUUID(@ApiParam(value = "ID network",required=true) @PathParam("UUID") String UUID
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.putNetworkUUID(UUID,securityContext);

@@ -14,11 +14,11 @@ import java.io.InputStream;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-10-22T20:34:14.886Z")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-10-25T14:06:59.556Z")
 public abstract class DomainApiService {
-    public abstract Response deleteDomainUUID(Integer UUID,SecurityContext securityContext) throws NotFoundException;
-    public abstract Response getDomainUUID(Integer UUID,SecurityContext securityContext) throws NotFoundException;
+    public abstract Response deleteDomainUUID(String UUID,SecurityContext securityContext) throws NotFoundException;
+    public abstract Response getDomainUUID(String UUID,SecurityContext securityContext) throws NotFoundException;
     public abstract Response postDomain(String vmName,Integer memory,String vmImage,Integer storage,SecurityContext securityContext) throws NotFoundException;
-    public abstract Response postDomainUUID(Integer UUID,SecurityContext securityContext) throws NotFoundException;
-    public abstract Response putDomainUUID(Integer UUID,SecurityContext securityContext) throws NotFoundException;
+    public abstract Response postDomainUUID(String UUID,SecurityContext securityContext) throws NotFoundException;
+    public abstract Response putDomainUUID(String UUID,SecurityContext securityContext) throws NotFoundException;
 }

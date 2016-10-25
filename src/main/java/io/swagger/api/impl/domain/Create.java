@@ -32,7 +32,7 @@ public class Create {
                             UUID vmUuid,
                             int vmMemory,
                             String vmImage
-                            ) {
+    ) {
         String template;
         Connect conn;
         String memory = String.valueOf(vmMemory);
@@ -46,7 +46,11 @@ public class Create {
             template = template.replace("$vmImage", vmImage);
             template = template.replace("$vmUuid", vmUuid.toString());
 
-            Domain domain = conn.domainCreateXML(template, 0);
+            Domain domain = conn.domainDefineXML(template);
+
+            domain.create();
+
+
             conn.close();
         } catch (Exception e) {
             System.out.print(e);

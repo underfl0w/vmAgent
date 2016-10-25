@@ -24,7 +24,7 @@ import javax.ws.rs.*;
 
 
 @io.swagger.annotations.Api(description = "the domain API")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-10-22T20:34:14.886Z")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-10-25T14:06:59.556Z")
 public class DomainApi  {
    private final DomainApiService delegate = DomainApiServiceFactory.getDomainApi();
 
@@ -37,7 +37,7 @@ public class DomainApi  {
     }, tags={ "Domain", })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "Status 200", response = void.class) })
-    public Response deleteDomainUUID(@ApiParam(value = "ID domain",required=true) @PathParam("UUID") Integer UUID
+    public Response deleteDomainUUID(@ApiParam(value = "ID domain",required=true) @PathParam("UUID") String UUID
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.deleteDomainUUID(UUID,securityContext);
@@ -51,7 +51,7 @@ public class DomainApi  {
     }, tags={ "Domain", })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "Status 200", response = void.class) })
-    public Response getDomainUUID(@ApiParam(value = "ID domain",required=true) @PathParam("UUID") Integer UUID
+    public Response getDomainUUID(@ApiParam(value = "ID domain",required=true) @PathParam("UUID") String UUID
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.getDomainUUID(UUID,securityContext);
@@ -82,7 +82,7 @@ public class DomainApi  {
     }, tags={ "Domain", })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "Status 200", response = void.class) })
-    public Response postDomainUUID(@ApiParam(value = "ID domain",required=true) @PathParam("UUID") Integer UUID
+    public Response postDomainUUID(@ApiParam(value = "ID domain",required=true) @PathParam("UUID") String UUID
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.postDomainUUID(UUID,securityContext);
@@ -96,7 +96,7 @@ public class DomainApi  {
     }, tags={ "Domain", })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "Status 200", response = void.class) })
-    public Response putDomainUUID(@ApiParam(value = "ID domain",required=true) @PathParam("UUID") Integer UUID
+    public Response putDomainUUID(@ApiParam(value = "ID domain",required=true) @PathParam("UUID") String UUID
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.putDomainUUID(UUID,securityContext);

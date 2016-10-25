@@ -14,25 +14,25 @@ import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-10-22T20:34:14.886Z")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-10-25T14:06:59.556Z")
 public class StorageApiServiceImpl extends StorageApiService {
     @Override
-    public Response deleteStoragePoolUUID(Integer UUID, SecurityContext securityContext) throws NotFoundException {
+    public Response deleteStoragePoolUUID(String UUID, SecurityContext securityContext) throws NotFoundException {
         // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }
     @Override
-    public Response deleteStoragePoolUUIDPVolumeUUIDV(Integer UUIDP, Integer UUIDV, SecurityContext securityContext) throws NotFoundException {
+    public Response deleteStoragePoolUUIDPVolumeUUIDV(String UUIDP, String UUIDV, SecurityContext securityContext) throws NotFoundException {
         // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }
     @Override
-    public Response getStoragePoolUUID(Integer UUID, SecurityContext securityContext) throws NotFoundException {
+    public Response getStoragePoolUUID(String UUID, SecurityContext securityContext) throws NotFoundException {
         // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }
     @Override
-    public Response getStoragePoolUUIDPVolumeUUIDV(Integer UUIDP, Integer UUIDV, SecurityContext securityContext) throws NotFoundException {
+    public Response getStoragePoolUUIDPVolumeUUIDV(String UUIDP, String UUIDV, SecurityContext securityContext) throws NotFoundException {
         // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }
@@ -42,12 +42,12 @@ public class StorageApiServiceImpl extends StorageApiService {
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }
     @Override
-    public Response postStoragePoolUUID(Integer UUID, SecurityContext securityContext) throws NotFoundException {
+    public Response postStoragePoolUUID(String UUID, SecurityContext securityContext) throws NotFoundException {
         // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }
     @Override
-    public Response postStoragePoolUUIDPVolume(Integer UUIDP, String name, Integer size, SecurityContext securityContext) throws NotFoundException {
+    public Response postStoragePoolUUIDPVolume(String UUIDP, String name, Integer size, SecurityContext securityContext) throws NotFoundException {
         // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }

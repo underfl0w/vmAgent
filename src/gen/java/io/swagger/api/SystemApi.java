@@ -24,7 +24,7 @@ import javax.ws.rs.*;
 
 
 @io.swagger.annotations.Api(description = "the system API")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-10-22T20:34:14.886Z")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-10-25T14:06:59.556Z")
 public class SystemApi  {
    private final SystemApiService delegate = SystemApiServiceFactory.getSystemApi();
 

@@ -24,7 +24,7 @@ import javax.ws.rs.*;
 
 
 @io.swagger.annotations.Api(description = "the storage API")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-10-22T20:34:14.886Z")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-10-25T14:06:59.556Z")
 public class StorageApi  {
    private final StorageApiService delegate = StorageApiServiceFactory.getStorageApi();
 
@@ -41,7 +41,7 @@ public class StorageApi  {
         @io.swagger.annotations.ApiResponse(code = 401, message = "Status 401", response = void.class),
         
         @io.swagger.annotations.ApiResponse(code = 404, message = "Status 404", response = void.class) })
-    public Response deleteStoragePoolUUID(@ApiParam(value = "ID Storage pool",required=true) @PathParam("UUID") Integer UUID
+    public Response deleteStoragePoolUUID(@ApiParam(value = "ID Storage pool",required=true) @PathParam("UUID") String UUID
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.deleteStoragePoolUUID(UUID,securityContext);
@@ -59,8 +59,8 @@ public class StorageApi  {
         @io.swagger.annotations.ApiResponse(code = 401, message = "Status 401", response = void.class),
         
         @io.swagger.annotations.ApiResponse(code = 404, message = "Status 404", response = void.class) })
-    public Response deleteStoragePoolUUIDPVolumeUUIDV(@ApiParam(value = "ID Storage pool",required=true) @PathParam("UUIDP") Integer UUIDP
-,@ApiParam(value = "ID Storage volume",required=true) @PathParam("UUIDV") Integer UUIDV
+    public Response deleteStoragePoolUUIDPVolumeUUIDV(@ApiParam(value = "ID Storage pool",required=true) @PathParam("UUIDP") String UUIDP
+,@ApiParam(value = "ID Storage volume",required=true) @PathParam("UUIDV") String UUIDV
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.deleteStoragePoolUUIDPVolumeUUIDV(UUIDP,UUIDV,securityContext);
@@ -78,7 +78,7 @@ public class StorageApi  {
         @io.swagger.annotations.ApiResponse(code = 401, message = "Status 401", response = void.class),
         
         @io.swagger.annotations.ApiResponse(code = 404, message = "Status 404", response = void.class) })
-    public Response getStoragePoolUUID(@ApiParam(value = "ID Storage pool",required=true) @PathParam("UUID") Integer UUID
+    public Response getStoragePoolUUID(@ApiParam(value = "ID Storage pool",required=true) @PathParam("UUID") String UUID
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.getStoragePoolUUID(UUID,securityContext);
@@ -92,8 +92,8 @@ public class StorageApi  {
     }, tags={ "Storage", })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "Status 200", response = void.class) })
-    public Response getStoragePoolUUIDPVolumeUUIDV(@ApiParam(value = "ID Storage pool",required=true) @PathParam("UUIDP") Integer UUIDP
-,@ApiParam(value = "ID Storage volume",required=true) @PathParam("UUIDV") Integer UUIDV
+    public Response getStoragePoolUUIDPVolumeUUIDV(@ApiParam(value = "ID Storage pool",required=true) @PathParam("UUIDP") String UUIDP
+,@ApiParam(value = "ID Storage volume",required=true) @PathParam("UUIDV") String UUIDV
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.getStoragePoolUUIDPVolumeUUIDV(UUIDP,UUIDV,securityContext);
@@ -129,7 +129,7 @@ public class StorageApi  {
     }, tags={ "Storage", })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "Status 200", response = void.class) })
-    public Response postStoragePoolUUID(@ApiParam(value = "ID Storage pool",required=true) @PathParam("UUID") Integer UUID
+    public Response postStoragePoolUUID(@ApiParam(value = "ID Storage pool",required=true) @PathParam("UUID") String UUID
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.postStoragePoolUUID(UUID,securityContext);
@@ -143,7 +143,7 @@ public class StorageApi  {
     }, tags={ "Storage", })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "Status 200", response = String.class, responseContainer = "List") })
-    public Response postStoragePoolUUIDPVolume(@ApiParam(value = "ID Storage pool",required=true) @PathParam("UUIDP") Integer UUIDP
+    public Response postStoragePoolUUIDPVolume(@ApiParam(value = "ID Storage pool",required=true) @PathParam("UUIDP") String UUIDP
 ,@ApiParam(value = "",required=true) @QueryParam("Name") String name
 ,@ApiParam(value = "") @QueryParam("Size") Integer size
 ,@Context SecurityContext securityContext)
