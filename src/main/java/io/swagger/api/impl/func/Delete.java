@@ -1,4 +1,4 @@
-package io.swagger.api.impl.domain;
+package io.swagger.api.impl.func;
 
 import org.libvirt.Connect;
 import org.libvirt.Domain;
@@ -10,7 +10,7 @@ import java.util.UUID;
  * Created by jurjen on 10/22/16.
  */
 public class Delete {
-    public boolean deleteVM(UUID vmUuid){
+    public boolean deleteDomain(UUID vmUuid){
         Connect conn;
         Domain domain;
         try {
@@ -18,7 +18,9 @@ public class Delete {
             conn = new Connect("qemu:///system");
             domain = conn.domainLookupByUUID(vmUuid);
 
+
             domain.destroy();
+            domain.undefine();
         }catch (LibvirtException e){
             System.out.print(e);
             return false;
