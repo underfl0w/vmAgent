@@ -10,14 +10,19 @@ import io.swagger.api.impl.func.*;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
+/*
+    Class that is being used every time a /DOMAIN/ request is made.
+ */
+
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2016-10-25T14:06:59.556Z")
 public class DomainApiServiceImpl extends DomainApiService {
+    // Regex to verify a UUID is submitted to the API.
     String regex = "^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$";
 
     @Override
     public Response deleteDomainUUID(String UUIDV, SecurityContext securityContext) throws NotFoundException {
-        if (UUIDV.matches(regex)) {
 
+        if (UUIDV.matches(regex)) {
 
             UUID vmUuid = java.util.UUID.fromString(UUIDV.toString());
 

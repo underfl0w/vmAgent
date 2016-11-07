@@ -9,6 +9,7 @@ import java.util.UUID;
 /**
  * Created by jurjen on 10/22/16.
  */
+// Deletes a Virtualmachine / Domain using the libvirt API
 public class Delete {
     public boolean deleteDomain(UUID vmUuid){
         Connect conn;

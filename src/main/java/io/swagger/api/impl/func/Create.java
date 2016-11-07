@@ -11,6 +11,7 @@ import java.io.RandomAccessFile;
  * Created by jurjen on 10/22/16.
  */
 public class Create {
+    // libvirt Domain XML that is used for every new Virtual machine
     private String TEMPLATE = "<domain type='kvm'>" + "<name>$vmName</name>" + "<uuid>$vmUuid</uuid>"
             + "<memory>$vmMemory</memory>" + "<vcpu>1</vcpu>" + "<os>"
             + "<type arch='x86_64' machine='pc-1.0'>hvm</type>" + "<boot dev='cdrom'/>" + "<boot dev='hd'/>" + "</os>" + "<clock offset='utc'/>"
@@ -62,7 +63,7 @@ public class Create {
 
         return true;
     }
-
+    // create a new virtual hard disk file for a new Virtual machine.
     public boolean createStorageFile(String sfUUID, int size) {
         try {
             String defaultStorageLocation = "/var/lib/libvirt/images" + sfUUID + ".img";
