@@ -20,7 +20,7 @@ public class Create {
             + "<alias name='ide0-0-0'/>" + "<address type='drive' controller='0' bus='0' unit='0'/>" + "</disk>"
             + "<controller type='ide' index='0'>" + "<alias name='ide0'/>"
             + "<address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x1'/>" + "</controller>"
-            + "<interface type='network'>" + "<mac address='52:54:00:6a:84:e9'/>" + "<source network='network'/>"
+            + "<interface type='default'>" + "<mac address='52:54:00:6a:84:e9'/>" + "<source network='default'/>"
             + "<target dev='vnet0'/>" + "<alias name='net0'/>"
             + "<address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>" + "</interface>"
             + "<input type='mouse' bus='ps2'/>" + "<graphics type='vnc' port='5900' autoport='yes'/>" + "<video>"

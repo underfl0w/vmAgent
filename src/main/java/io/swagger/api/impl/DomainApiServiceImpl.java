@@ -37,7 +37,7 @@ public class DomainApiServiceImpl extends DomainApiService {
 
         }
         } else {
-            return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.ERROR, "Not a valid UUID")).build();
+            return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.ERROR, "Not a  valid UUID")).build();
 
         }
     }
