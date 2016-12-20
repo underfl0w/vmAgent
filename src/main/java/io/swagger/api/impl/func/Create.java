@@ -50,6 +50,8 @@ public class Create {
             template = template.replace("$vmImage", vmImage);
             template = template.replace("$vmUuid", vmUuid.toString());
             createStorageFile(storageUuid.toString(), 100);
+            String storagelocation = "/var/lib/libvirt/images///" + storageUuid.toString() + ".img";
+            template = template.replace("$vmStorage", storagelocation);
             Domain domain = conn.domainDefineXML(template);
             domain.create();
 
@@ -66,7 +68,7 @@ public class Create {
     // create a new virtual hard disk file for a new Virtual machine.
     public boolean createStorageFile(String sfUUID, int size) {
         try {
-            String defaultStorageLocation = "/var/lib/libvirt/images" + sfUUID + ".img";
+            String defaultStorageLocation = "/var/lib/libvirt/images///" + sfUUID + ".img";
             RandomAccessFile randomFile = new RandomAccessFile(defaultStorageLocation, "rw");
             randomFile.setLength(1024 * 1024 * size);
         } catch (Exception e) {
